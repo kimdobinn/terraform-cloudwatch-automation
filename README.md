@@ -45,28 +45,28 @@ Implemented a hierarchical template system using Terraform's `templatefile()` fu
 ```
 modules/
 ├── common/ec2/templates/setup/
-│   ├── init.sh.tpl                    # Base CloudWatch agent installation
-│   ├── file_metrics.json.tpl          # System metrics configuration
-│   └── file_sys_logs.json.tpl         # System logs configuration
+│   ├── init.sh.tpl                        # Base CloudWatch agent installation
+│   ├── file_metrics.json.tpl              # System metrics configuration
+│   └── file_sys_logs.json.tpl             # System logs configuration
 │
 ├── event-scheduler/
-│   ├── 2-instance.tf                  # Module instantiation with CloudWatch params
+│   ├── 2-instance.tf                      # Module instantiation with CloudWatch params
 │   └── templates/setup/
-│       ├── init.sh.tpl                # Service setup script
+│       ├── init.sh.tpl                    # Service setup script
 │       ├── file_event_scheduler.json.tpl  # Application logs config
-│       └── setup_app_logs.sh.tpl      # CloudWatch append script
+│       └── setup_app_logs.sh.tpl          # CloudWatch append script
 │
 └── backend/
-    ├── 2-instance.tf                  # Module instantiation with CloudWatch params
+    ├── 2-instance.tf                      # Module instantiation with CloudWatch params
     └── templates/setup/
-        ├── init.sh.tpl                # Service setup script
-        ├── file_app_logs.json.tpl     # Application logs config
-        └── setup_app_logs.sh.tpl      # CloudWatch append script
+        ├── init.sh.tpl                    # Service setup script
+        ├── file_app_logs.json.tpl         # Application logs config
+        └── setup_app_logs.sh.tpl          # CloudWatch append script
 
 live-infrastructure/
 └── au/prod/
-    ├── 6-event-scheduler.tf           # Event scheduler instance config
-    └── 8-backend.tf                   # Backend instance config
+    ├── 6-event-scheduler.tf               # Event scheduler instance config
+    └── 8-backend.tf                       # Backend instance config
 ```
 
 ## Technical Implementation
